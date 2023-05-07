@@ -16,9 +16,10 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: Library
+          path: TestActions/Library
           key: Library-${{ hashFiles('TestActions/Assets/**', 'TestActions/Packages/**', 'TestActions/ProjectSettings/**') }}
           restore-keys: |
+            Library-TestActions-
             Library-
 
       # Build
