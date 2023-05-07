@@ -16,10 +16,9 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: TestActions/Library
-          key: Library-${{ hashFiles('TestActions/Assets/**', 'TestActions/Packages/**', 'TestActions/ProjectSettings/**') }}
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-TestActions-
             Library-
 
       # Build
@@ -30,7 +29,6 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          path: TestActions
           targetPlatform: WebGL
 
       # Output
